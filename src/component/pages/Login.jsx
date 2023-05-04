@@ -13,7 +13,7 @@ const Login = () => {
     }
 
     return (
-        <div>
+        <div className='login'>
            <h1>Ввойдите пожалуйста</h1>
             <form
                 action=""

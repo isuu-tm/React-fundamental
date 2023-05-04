@@ -16,6 +16,7 @@ const PostForm = ({create}) => {
   }
   return (
          <form>
+             <h1>Добавить пост</h1>
       <MyInput 
       type='text'
       placeholder="Название поста!"

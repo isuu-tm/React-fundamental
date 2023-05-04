@@ -2,7 +2,8 @@ import React, {useContext} from 'react';
 import {Link} from "react-router-dom";
 import MyButton from "./UI/Button/MyButton";
 import {AuthContext} from "../context";
-
+import { FaInstagram } from 'react-icons/fa';
+import { SlLogin } from 'react-icons/sl';
 const Navbar = () => {
     const {auth, setIsAuth} = useContext(AuthContext)
     // const [auth, setIsAuth] = useContext(AuthContext) - Тут я увидел что если неправльно изпользовать деструктуризацию
@@ -15,11 +16,22 @@ const Navbar = () => {
     return (
             <div className='navbar'>
                 <MyButton onClick={logout}>
-                    Выйти
+                    Выйти <SlLogin/>
                 </MyButton>
                 <div className='navbar__links'>
-                    <Link to='posts'>Посты</Link>
-                    <Link to='about'>О нас</Link>
+                    <MyButton>
+                        <Link to='posts' className='link'>Посты</Link>
+                    </MyButton>
+                    <MyButton>
+                        <Link to='about' className='link'>О нас</Link>
+                    </MyButton>
+                    <MyButton>
+                        <Link
+                            className='link'
+                            to='https://www.instagram.com/bermetti__/'
+                            target='_blank'
+                        ><FaInstagram/></Link>
+                    </MyButton>
                 </div>
             </div>
     );

@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -7,6 +8,7 @@
 #root {
     display: flex;
     justify-content: center;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .App {
@@ -17,10 +19,20 @@
 .post {
     display: flex;
     padding: 15px;
-    border: 2px solid green;
+    border: azure;
     margin-top: 15px;
     justify-content: space-between;
     align-items: center;
+    border-radius: 8px;
+    -webkit-box-shadow: 1px 1px 9px 1px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 1px 1px 9px 1px rgba(34, 60, 80, 0.2);
+    box-shadow: 1px 1px 9px 1px rgba(34, 60, 80, 0.2);
+}
+
+.post:hover {
+    -webkit-box-shadow: 1px 1px 9px 4px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 1px 1px 9px 4px rgba(34, 60, 80, 0.2);
+    box-shadow: 1px 1px 9px 4px rgba(34, 60, 80, 0.2);
 }
 
 .post-enter {
@@ -36,6 +48,10 @@
 .post-exit-active {
     transform: translateX(-350px);
     transition: all 500ms ease-in;
+}
+
+.post__content {
+    padding: 5px 10px;
 }
 
 .post__btns {
@@ -58,16 +74,66 @@
     border: 2px solid orange;
 }
 
+.post__page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 5px 20px;
+}
+
+.post__cmnts {
+    border-radius: 4px;
+    border: 1px solid teal;
+    margin: 2px;
+    padding: 4px 8px;
+}
+
+.post__cmnts h5 {
+    padding: 4px;
+    text-transform: uppercase;
+}
+
+.img__cover {
+    padding: 2px;
+    height: 250px;
+    width: 300px;
+}
+
 .navbar {
     height: 50px;
     width: 100vw;
     display: flex;
-    /*flex-direction: column;*/
+    align-items: center;
     justify-content: center;
-    padding: 0 15px;
-    background-color: lightgray;
+    padding: 0 10px 4px;
+    background-color: azure;;
+    -webkit-box-shadow: 0px -5px 5px -5px rgba(34, 60, 80, 0.6) inset;
+    -moz-box-shadow: 0px -5px 5px -5px rgba(34, 60, 80, 0.6) inset;
+    box-shadow: 0px -5px 5px -5px rgba(34, 60, 80, 0.6) inset;
 }
 
 .navbar__links {
     margin-left: auto;
+}
+
+.link {
+    list-style: none;
+    text-decoration: none;
+    color: inherit;
+}
+
+.login {
+    font-family: inherit;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login h1 {
+    font-size: 23px;
+    text-transform: uppercase;
+    /*text-decoration: underline;*/
+    color: teal;
 }

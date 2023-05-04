@@ -12,6 +12,7 @@ import PostForm from "../UI/PostForm/PostForm";
 import {usePosts} from "../hooks/usePosts";
 import {useObserver} from "../hooks/useObserver";
 import {MySelect} from "../UI/Select/MySelect";
+import { IoCreateOutline } from 'react-icons/io5';
 
 
 const Posts = (props) => {
@@ -87,7 +88,7 @@ const Posts = (props) => {
         }))
     }
 
-    useEffect( () => {
+    useEffect(() => {
         fetchPost()
     }, [page, limit])
 
@@ -111,13 +112,12 @@ const Posts = (props) => {
     // } - Это анологичный запись функции вышестоящего для выполнения асинхронной функции
 
 
-
     return (
         <div className="App">
             <MyButton
-                style={{marginTop:'10px'}}
+                style={{marginTop: '10px'}}
                 onClick={() => setModal(true)}>
-                Создать пост
+                Создать пост <IoCreateOutline/>
             </MyButton>
             {/*<button onClick={fetchData}>Вызвать посты</button>*/}
             <MyModal
@@ -125,33 +125,43 @@ const Posts = (props) => {
                 setVisible={setModal}>
                 <PostForm create={createPost}/>
             </MyModal>
-            <hr style={{margin: '15px 0'}}/>
-            <PostFilter filter={filter} setFilter={setFilter}/>
+            <hr
+                style={{margin: '15px 0'}}/>
+            <PostFilter
+                filter={filter}
+                setFilter={setFilter}/>
             <MySelect
                 value={limit}
                 onChange={value => setLimit(value)}
                 defaultValue='Количество элементов'
                 options={[
-                    {value:5, name:'5'},
-                    {value:10, name:'10'},
-                    {value:20, name:'20'},
-                    {value:-1, name:'Все'},
+                    {value: 5, name: '5'},
+                    {value: 10, name: '10'},
+                    {value: 20, name: '20'},
+                    {value: -1, name: 'Все'},
                 ]}
             />
             {postError &&
                 <h1>Произошла ошибка 404</h1>}
             <PostList
                 posts={sortedAndSearchedPosts}
-                title={'Посты про Js'}
+                title={'Новости 24h'}
                 remove={removePost}/>}
             <div
-                style={{background:'teal'}}
+                style={{background: 'teal'}}
                 ref={lastElement} // - здесь я передал качестве ref - ту переменную в котором будет сидеть этот элемент!
-            >-</div>
+            >-
+            </div>
             {isPostLoading &&
-                 <div style={{display:'flex', justifyContent:'center',marginTop:'20px'}}><Loader/></div>}
+                <div
+                    style={{display: 'flex',
+                        justifyContent: 'center',
+                        marginTop: '20px'}}
+                >
+                    <Loader/>
+                </div>}
             <div className='page__wrapper'>
-                {pagesArray.map( p => {
+                {pagesArray.map(p => {
                     return <span
                         onClick={() => changePost(p)}
                         className={page === p ? 'page page__current' : 'page'}

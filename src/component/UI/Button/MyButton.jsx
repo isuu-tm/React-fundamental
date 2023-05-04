@@ -6,7 +6,8 @@ const MyButton = ({children, ...props}) => {
     <button 
     className={s.myBtn}
     disabled={false}
-    {...props}>
+    {...props}
+    >
         {children}
     </button>
   )
