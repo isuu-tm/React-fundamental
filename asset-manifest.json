@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/isuu-tm/React-fundamental/static/css/main.f893812a.css",
-    "main.js": "/isuu-tm/React-fundamental/static/js/main.94819bb0.js",
-    "index.html": "/isuu-tm/React-fundamental/index.html",
-    "main.f893812a.css.map": "/isuu-tm/React-fundamental/static/css/main.f893812a.css.map",
-    "main.94819bb0.js.map": "/isuu-tm/React-fundamental/static/js/main.94819bb0.js.map"
+    "main.css": "/React-fundamental/static/css/main.f893812a.css",
+    "main.js": "/React-fundamental/static/js/main.94819bb0.js",
+    "index.html": "/React-fundamental/index.html",
+    "main.f893812a.css.map": "/React-fundamental/static/css/main.f893812a.css.map",
+    "main.94819bb0.js.map": "/React-fundamental/static/js/main.94819bb0.js.map"
   },
   "entrypoints": [
     "static/css/main.f893812a.css",
